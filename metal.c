@@ -51,6 +51,7 @@
 #include "device.h"
 #include "board.h"
 #include "c2000ware_libraries.h"
+#include "sysctl.h"
 
 //
 // Main
@@ -95,9 +96,13 @@ void main(void)
     EINT;
     ERTM;
 
+
+
+    uint32_t sysclk = SysCtlClockGet();  // 获取系统时钟频率（单位：Hz）
+
     while(1)
     {
-        
+        printf("SYSTEM CLK= %d",sysclk);
     }
 }
 
